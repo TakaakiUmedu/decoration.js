@@ -1,5 +1,5 @@
 /*
-decoration.js
+decoration.js Ver. 0.9 <https://github.com/TakaakiUmedu/decoration.js>
 Copyright (C) 2013 Takaaki Umedu
 
     This program is free software: you can redistribute it and/or modify
@@ -13,9 +13,15 @@ Copyright (C) 2013 Takaaki Umedu
     GNU Lesser General Public License for more details.
 
     You should have received a copy of the GNU Lesser General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    at <https://github.com/TakaakiUmedu/decoration.js/blob/master/LICENSE>.
+    If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+
+For more information, see <https://github.com/TakaakiUmedu/decoration.js>.
+
+*/
 
 (function(){
 	var DEBUG = false;
@@ -363,17 +369,15 @@ Copyright (C) 2013 Takaaki Umedu
 					var r2 = star.size * this.param.c_g_r3;
 					
 					var grad = this.context.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size);
-					grad.addColorStop(0,                     'rgba(255,255,255,' + f_to_s(this.param.c_g_a0 * alpha) + ')');
-					grad.addColorStop(this.param.c_g_r1,                'rgba(255,255,255,0.0)');
-					grad.addColorStop(this.param.c_g_r2,                'rgba(255,255,255,0.0)');
+					grad.addColorStop(0,                                           'rgba(255,255,255,' + f_to_s(this.param.c_g_a0 * alpha) + ')');
+					grad.addColorStop(this.param.c_g_r1,                           'rgba(255,255,255,0.0)');
+					grad.addColorStop(this.param.c_g_r2,                           'rgba(255,255,255,0.0)');
 					grad.addColorStop((this.param.c_g_r2 + this.param.c_g_r3) / 2, 'rgba(255,255,255,' + f_to_s(this.param.c_g_a1 * alpha) + ')');
-					grad.addColorStop(this.param.c_g_r3,                'rgba(255,255,255,0.0)');
+					grad.addColorStop(this.param.c_g_r3,                           'rgba(255,255,255,0.0)');
 					this.context.fillStyle = grad;
 					
-//					this.context.fillStyle = this.param.circle_color;
 					this.context.beginPath();
 					this.context.arc(star.x, star.y, r2, 0, Math.PI * 2, false);
-//					this.context.arc(star.x, star.y, r2, 0, Math.PI * 2, true);
 					this.context.closePath();
 					this.context.fill();
 					
